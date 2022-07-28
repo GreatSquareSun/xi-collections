@@ -23,7 +23,7 @@ class ArrayEnumerable implements Enumerable
         $this->elements = $elements;
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->elements);
     }
@@ -112,7 +112,7 @@ class ArrayEnumerable implements Enumerable
         return $count;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->elements);
     }
