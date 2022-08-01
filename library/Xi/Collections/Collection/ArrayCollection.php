@@ -128,7 +128,8 @@ class ArrayCollection extends ArrayEnumerable implements Collection
         $values = $this->elements;
 
         return function($value) use ($callback, &$values) {
-            list($key) = each($values);
+            $key = key($values);
+            next($values);
 
             return $callback($value, $key);
         };
